@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tees Shop</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* Add the CSS code here */
+    /* ... */
+    
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      display: none;
+    }
+  
+    .login-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      z-index: 2;
+      display: none;
+    }
+  
+    .container {
+      text-align: center;
+    }
+  
+    h2 {
+      margin-bottom: 20px;
+    }
+  
+    .form-group {
+      margin-bottom: 10px;
+    }
+  
+    label {
+      display: block;
+    }
+  
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+  
+    button {
+      padding: 10px 20px;
+      border-radius: 3px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  
+    /* Add additional styles and customize as needed */
+  </style>
+  <script src="script2.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Tees Shop</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#" onclick="toggleLoginPopup()">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="products">
+      <!-- Product listing goes here -->
+    </section>
+
+    <aside id="cart">
+      <h2>Cart</h2>
+      <ul id="cart-items">
+        <!-- Cart items go here -->
+      </ul>
+      <p id="total">Total: $0.00</p>
+      <div id="paypal-button-container"></div>
+    </aside>
+  </main>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="login-popup" id="loginPopup">
+    <div class="container">
+      <h2>Login</h2>
+      <form id="loginForm" method="POST" action="login.php">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="loginBtn">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 TEES SHOP. All rights reserved.</p>
+  </footer>
+
+  <!-- Replace "YOUR_PAYPAL_CLIENT_ID" with your own PayPal client ID -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AXA6XNendBegdQj_ni27ZUUKyW3UrR8jX3fVkx6TVA51S9WpPRqbZrB6htPJa4s2XKM7r2RrPxs901nL"></script>
+  <script src="paypal.js"></script>
+  <script>
+    function toggleLoginPopup() {
+      var overlay = document.getElementById("overlay");
+      var loginPopup = document.getElementById("loginPopup");
+
+      if (overlay.style.display === "block") {
+        overlay.style.display = "none";
+        loginPopup.style.display = "none";
+      } else {
+        overlay.style.display = "block";
+        loginPopup.style.display = "block";
+      }
+    }
+  </script>
+  <script src="shope.js"></script>
+  
+</body>
+</html>
+
+
